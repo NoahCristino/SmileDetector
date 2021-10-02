@@ -26,7 +26,6 @@ while True:
 		# array
 		shape = predictor(gray, rect)
 		shape = face_utils.shape_to_np(shape)
-		print(shape)
 		# loop over the (x, y)-coordinates for the facial landmarks
 		# and draw them on the image
 		"""
@@ -46,7 +45,7 @@ while True:
 				cv2.circle(frame, (x, y), 1, (0, 0, 255), -1)
 			else:
 				#color points in face blue
-				cv2.circle(frame, (x, y), 1, (255, 0, 0), -1)			
+				pass #cv2.circle(frame, (x, y), 1, (255, 0, 0), -1)			
 	  
 	# show the frame
 	cv2.imshow("Frame", frame)
