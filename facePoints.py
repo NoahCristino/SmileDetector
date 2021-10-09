@@ -1,7 +1,34 @@
-
-
+from imutils.video import VideoStream
+from imutils import face_utils
+import datetime
+import argparse
+import imutils
+import time
+import dlib
+import cv2
+import sys
 import cv2
 import numpy as np
+
+detector = dlib.get_frontal_face_detector()
+predictor = dlib.shape_predictor("t.dat")
+
+def image_score(frame):
+    """Input: ImagePath, Output: NpArray with verticies
+    """
+    #frame = cv2.imread(image_path)
+    frame = imutils.resize(frame, width=400)
+    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    # detect faces in the grayscale frame
+    rects = detector(gray, 0)
+    # loop over the face detections
+    for rect in rects:
+        # determine the facial landmarks for the face region, then
+        # convert the facial landmark (x, y)-coordinates to a NumPy
+        # array
+        shape = predictor(gray, rect)
+        shape = face_utils.shape_to_np(shape)
+        return shape
 
 # This below mehtod will draw all those points which are from 0 to 67 on face one by one.
 def drawPoints(image, faceLandmarks, startpoint, endpoint, isClosed=False):

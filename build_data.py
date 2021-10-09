@@ -1,0 +1,22 @@
+from facePoints import image_score
+import cv2
+import pandas as pd
+from tqdm import tqdm
+
+names = open("genki/images.txt", "r")
+labels = open("genki/labels.txt", "r")
+l = labels.readlines()
+n = names.readlines()
+df = pd.DataFrame(columns=('filename', 'smile', 'vertex_array'))
+for idx, i in tqdm(enumerate(range(len(n)))):
+    name = "genki/files/"+n[i].strip()
+    vertex = image_score(cv2.imread(name))
+    if vertex is None:
+        continue
+    smile = l[i].strip()[0] #0 = neutral, 1 = smile
+    df.loc[idx] = [name, smile, vertex]
+
+names.close()
+labels.close()
+print(df.shape)
+df.to_pickle("data.pkl")
