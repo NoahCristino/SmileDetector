@@ -7,6 +7,7 @@ from pygame import mixer
 
 mixer.init()
 
+
 class App:
 
     def __init__(self, window, window_title, video_source=0):
@@ -40,14 +41,27 @@ class App:
         # img = tkinter.PhotoImage(file="white_flash.ppm")
         # self.canvas.create_image(0, 0, anchor=tkinter.NW, image=img)
         ret, frame = self.vid.get_frame()
+
         # The commented code below was an attempt to have the program write the images to a folder
         # called "Photos" in the directory
         # path = "/Photos"
+        def display(image_name):
+            root = tkinter.Tk()
+            # root.title("display image")
+            im = PIL.Image.open(image_name)  # This is the correct location and spelling for my image location
+            photo = PIL.ImageTk.PhotoImage(im)
+            cv = tkinter.Canvas()
+            cv.pack()
+            cv.create_image(0, 0, image=photo, anchor=None)
+            root.mainloop()
+
         if ret:
             # cv2.imwrite(os.path.join(path, "frame-" + time.strftime("%d-%m-%Y-%H-%M-%S") + ".jpg")
             #                         ,cv2.cvtColor(frame, cv2.COLOR_RGB2BGR))
-            cv2.imwrite("frame-" + time.strftime("%d-%m-%Y-%H-%M-%S") + ".jpg",
+            image_name = "frame-" + time.strftime("%d-%m-%Y-%H-%M-%S") + ".jpg"
+            cv2.imwrite(image_name,
                         cv2.cvtColor(frame, cv2.COLOR_RGB2BGR))
+            display(image_name=image_name)
 
     # Returns the frame from the video source
     def update(self):
