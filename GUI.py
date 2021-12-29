@@ -14,6 +14,11 @@ class App:
         self.window = window
         self.window.title(window_title)
 
+        # Boolean checking if a snapshot was taken
+        self.is_picture_taken = False
+        # String for the name of the most recent snapshot taken
+        self.image_name = ""
+
         self.video_source = video_source
 
         # Opens computer webcam if possible
@@ -42,36 +47,30 @@ class App:
         # self.canvas.create_image(0, 0, anchor=tkinter.NW, image=img)
         ret, frame = self.vid.get_frame()
 
-        # The commented code below was an attempt to have the program write the images to a folder
-        # called "Photos" in the directory
-        # path = "/Photos"
-        def display(image_name):
-            root = tkinter.Tk()
-            # root.title("display image")
-            im = PIL.Image.open(image_name)  # This is the correct location and spelling for my image location
-            photo = PIL.ImageTk.PhotoImage(im)
-            cv = tkinter.Canvas()
-            cv.pack()
-            cv.create_image(0, 0, image=photo, anchor=None)
-            root.mainloop()
-
         if ret:
             # cv2.imwrite(os.path.join(path, "frame-" + time.strftime("%d-%m-%Y-%H-%M-%S") + ".jpg")
             #                         ,cv2.cvtColor(frame, cv2.COLOR_RGB2BGR))
-            image_name = "frame-" + time.strftime("%d-%m-%Y-%H-%M-%S") + ".jpg"
-            cv2.imwrite(image_name,
+            self.image_name = "frame-" + time.strftime("%d-%m-%Y-%H-%M-%S") + ".jpg"
+            self.is_picture_taken = True
+            cv2.imwrite(self.image_name,
                         cv2.cvtColor(frame, cv2.COLOR_RGB2BGR))
-            display(image_name=image_name)
 
     # Returns the frame from the video source
     def update(self):
-        ret, frame = self.vid.get_frame()
-        if ret:
-            self.photo = PIL.ImageTk.PhotoImage(image=PIL.Image.fromarray(frame))
+        if self.is_picture_taken:
+            # The window displays the most recently taken snapshot
+            im = PIL.Image.open(self.image_name)
+            self.photo = PIL.ImageTk.PhotoImage(im)
             self.canvas.create_image(0, 0, image=self.photo, anchor=tkinter.NW)
+        else:
+            # The window displays the current frame that your camera sees
+            ret, frame = self.vid.get_frame()
+            if ret:
+                self.photo = PIL.ImageTk.PhotoImage(image=PIL.Image.fromarray(frame))
+                self.canvas.create_image(0, 0, image=self.photo, anchor=tkinter.NW)
 
+        # After self.delay milliseconds, the window calls self.update again
         self.window.after(self.delay, self.update)
-
 
 class MyVideoCapture:
 
