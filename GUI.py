@@ -100,4 +100,4 @@ class MyVideoCapture:
             self.vid.release()
 
 
-App(tkinter.Tk(), "Smile Window")
+
