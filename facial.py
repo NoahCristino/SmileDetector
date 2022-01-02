@@ -6,7 +6,9 @@ import imutils
 import time
 import dlib
 import cv2
+import numpy as np
 from facePoints import image_score
+from facePoints import predict
 detector = dlib.get_frontal_face_detector()
 predictor = dlib.shape_predictor("t.dat")
 vs = VideoStream().start()
@@ -19,8 +21,16 @@ while True:
     frame = imutils.resize(frame, width=400)
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     shape = image_score(frame)
-    print(np.shape(shape))
-    if shape != None:
+    if np.ndim(shape) != 0:
+        font = cv2.FONT_HERSHEY_SIMPLEX
+        t = "no smile"
+        green = 0
+        red = 255
+        if predict(frame):
+            t = "smile"
+            green = 255
+            red = 0
+        cv2.putText(frame, t, (10,50), font, 1, (red, green, 0), 2, cv2.LINE_AA)
         for idx, (x, y) in enumerate(shape):
             if idx in range(48,68):
                 #color points in mouth red
@@ -32,8 +42,8 @@ while True:
 	# show the frame
     cv2.imshow("Frame", frame)
     key = cv2.waitKey(1) & 0xFF
-    if len(shape) != 0:
-        cv2.waitKey(0) #breakpoint
+    #if len(shape) != 0:
+        #cv2.waitKey(0) #breakpoint
     # if the `q` key was pressed, break from the loop
     if key == ord("q"):
         break
