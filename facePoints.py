@@ -9,6 +9,8 @@ import cv2
 import sys
 import cv2
 import numpy as np
+import math
+import joblib
 
 detector = dlib.get_frontal_face_detector()
 predictor = dlib.shape_predictor("t.dat")
@@ -59,3 +61,39 @@ def facePoints(image, faceLandmarks):
 def facePoints2(image, faceLandmarks, color=(0, 255, 0), radius=4):
   for p in faceLandmarks.parts():
     cv2.circle(im, (p.x, p.y), radius, color, -1)
+
+def rotate_point(center_x,center_y,angle,x,y):
+  s = math.sin(angle)
+  c = math.cos(angle)
+
+  x -= center_x
+  y -= center_y
+
+  xnew = x * c - y * s;
+  ynew = x * s + y * c;
+
+  return (xnew + center_x, ynew + center_y)
+
+def localize(points):
+    d = []
+    a = math.atan2(points[30][1] - points[27][1], points[30][0] - points[27][0])
+    data = []
+    for point in points:
+        r = rotate_point(200,200,((math.pi/2)-a),point[0],point[1])
+        data.append([r[0],r[1]])
+    xs = [s[0] for s in data]
+    ys = [s[1] for s in data]
+    x_scale = abs(max(xs)-min(xs))
+    y_scale = abs(max(ys)-min(ys))
+    x_scaled = [(e-min(xs))/x_scale for e in xs]
+    y_scaled = [(e-min(ys))/y_scale for e in ys]
+    for idx, x in enumerate(x_scaled):
+        d.append([x,y_scaled[idx]])
+    return d
+    
+def predict(img):
+    clf = joblib.load('model.pkl')
+    vertex = localize(image_score(img))
+    v_in = np.asarray([j for sub in vertex for j in sub], dtype=np.float32)
+    prediction = clf.predict([v_in])
+    return bool(int(prediction[0]))
