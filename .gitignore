@@ -1,3 +1,5 @@
 genki/
 __pycache__/
 genki.rar
+data.pkl
+model.pkl
