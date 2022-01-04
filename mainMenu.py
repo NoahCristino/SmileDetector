@@ -32,6 +32,7 @@ def aboutButtonFunction():
     textBody = """SmileDetector is a web application that uses machine learning to detect and rate smiles. SmileDetector will calculate your ideal smile based off of your facial structure so that you can smile better in pictures. Machine learning accurately scans and maps facial vectors to your face to measure and track your facial structure and movements. After using SmileDetector you will never have to worry about posing for photos again. Soon you will be able to smile perfectly the second you see a camera."""
 
     T.insert(tkinter.END, textBody)
+    T.config(state=DISABLED)
     l.pack()
     T.pack()
     backButton.pack()
@@ -49,6 +50,7 @@ def creditsButtonFunction():
     creditsWindow.geometry("530x335")
     creditsWindow.title("Project Credits")
     T = Text(creditsWindow, height=13, width=70, wrap=WORD, insertborderwidth=2, pady=10)
+    T.config(state=DISABLED)
     l = Label(creditsWindow, text="Project Credits")
     l.config(font=("Courier", 18))
     backButton = Button(creditsWindow, text="Return To Main Menu", command=lambda: returnHome(creditsWindow), pady=10)
