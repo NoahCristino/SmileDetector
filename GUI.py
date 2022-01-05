@@ -35,8 +35,8 @@ class App:
 
     def snapshot(self):
         # Captures a frame from the video capture
-        mixer.music.load("mixkit-camera-shutter-hard-click-1430.ogg")
-        mixer.music.play()
+        # mixer.music.load("mixkit-camera-shutter-hard-click-1430.ogg")
+        # mixer.music.play()
         # The commented code below was an attempt to add a white flash when the image is taken
         # img = tkinter.PhotoImage(file="white_flash.ppm")
         # self.canvas.create_image(0, 0, anchor=tkinter.NW, image=img)
@@ -45,16 +45,6 @@ class App:
         # The commented code below was an attempt to have the program write the images to a folder
         # called "Photos" in the directory
         # path = "/Photos"
-        def display(image_name):
-            root = tkinter.Tk()
-            # root.title("display image")
-            im = PIL.Image.open(image_name)  # This is the correct location and spelling for my image location
-            photo = PIL.ImageTk.PhotoImage(im)
-            cv = tkinter.Canvas()
-            cv.pack()
-            cv.create_image(0, 0, image=photo, anchor=None)
-            root.mainloop()
-
         if ret:
             # cv2.imwrite(os.path.join(path, "frame-" + time.strftime("%d-%m-%Y-%H-%M-%S") + ".jpg")
             #                         ,cv2.cvtColor(frame, cv2.COLOR_RGB2BGR))
@@ -92,12 +82,7 @@ class MyVideoCapture:
                 return (ret, cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
             else:
                 return (ret, None)
-        else:
-            return (ret, None)
 
     def __del__(self):
         if self.vid.isOpened():
             self.vid.release()
-
-
-
