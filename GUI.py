@@ -53,7 +53,6 @@ class App:
             image_name = "frame-" + time.strftime("%d-%m-%Y-%H-%M-%S") + ".jpg"
             cv2.imwrite(image_name,
                         cv2.cvtColor(frame, cv2.COLOR_RGB2BGR))
-            display(image_name=image_name)
 
     # Returns the frame from the video source
     def update(self):
