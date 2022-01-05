@@ -7,11 +7,11 @@ https://utmist.gitlab.io/projects/smiledetector/
 
 **facePoints.py** - library containing functions:
 
-* predict: makes prediction with model
+* *predict*: makes prediction with model
 
-* localize: rotates detected points on face to ensure correct orientation and scales based on image size
+* *localize*: rotates detected points on face to ensure correct orientation and scales based on image size
 
-* image_score: generates list of points on mouth
+* *image_score*: generates list of points on mouth
 
 **facial.py** - remove and incorporate into GUI (live prediction on webcam)
 
