@@ -13,8 +13,11 @@ mixer.init()
 class App:
 
     def __init__(self, window, window_title, video_source=0):
-        self.window = window
-        self.window.title(window_title)
+        self.window = PanedWindow(window)
+
+        check = Checkbutton(self.window, text="Choose Me !")
+        check.pack(side=RIGHT)
+        self.window.add(check)
 
         self.video_source = video_source
 
