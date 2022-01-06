@@ -58,10 +58,10 @@ def facePoints(image, faceLandmarks):
 
 # Use this function for any model other than
 # 70 points facial_landmark detector model
-def facePoints2(image, faceLandmarks, color=(0, 255, 0), radius=4):
+"""def facePoints2(image, faceLandmarks, color=(0, 255, 0), radius=4):
   for p in faceLandmarks.parts():
     cv2.circle(im, (p.x, p.y), radius, color, -1)
-
+"""
 def rotate_point(center_x,center_y,angle,x,y):
   s = math.sin(angle)
   c = math.cos(angle)
