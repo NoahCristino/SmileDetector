@@ -91,6 +91,7 @@ class App:
             frame = imutils.resize(frame, width=400)
             gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
             shape = image_score(frame)
+            smiling = False
             if np.ndim(shape) != 0:
                 font = cv2.FONT_HERSHEY_SIMPLEX
                 self.is_smiling.set("Status: Not Smiling")
@@ -98,18 +99,23 @@ class App:
                 red = 255
                 if predict(frame):
                     self.is_smiling.set("Status: Smiling")
+                    smiling = True
                     green = 255
                     red = 0
                 #cv2.putText(frame, t, (10,50), font, 1, (red, green, 0), 2, cv2.LINE_AA)
                 for idx, (x, y) in enumerate(shape):
                     if idx in range(48,68):
                         #color points in mouth red
-                        cv2.circle(frame, (x, y), 1, (0, 0, 255), -1)
+                        if smiling:
+                            cv2.circle(frame, (x, y), 1, (0, 255, 0), -1)
+                        else:
+                            cv2.circle(frame, (x, y), 1, (255, 0, 0), -1)
                     else:
                         #color points in face blue
                         pass #cv2.circle(frame, (x, y), 1, (255, 0, 0), -1)
             else:
                 self.is_smiling.set("Status: Face not Detected")
+            frame = imutils.resize(frame, width=int(self.vid.width))
             self.photo = PIL.ImageTk.PhotoImage(image=PIL.Image.fromarray(frame))
             self.canvas.create_image(0, 0, image=self.photo, anchor=tkinter.NW)
 
