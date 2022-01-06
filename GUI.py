@@ -39,6 +39,7 @@ class App:
 
         # self.btn_snapshot = tkinter.Button(window, text="Snapshot", width=50, command=self.snapshot)
         # self.btn_snapshot.pack(anchor=tkinter.CENTER, expand=True)
+        self.show_vector = False
 
         smalllogo = Image.open("smile_detector_logo.png")
         smileimage = ImageTk.PhotoImage(smalllogo.resize((200, 200)))
@@ -81,7 +82,7 @@ class App:
 
     def show_vector_points(self):
         # Shows the vector points on the mouth of the video feed
-        print("hello there")
+        self.show_vector = not self.show_vector
 
     # Returns the frame from the video source
     def update(self):
@@ -103,16 +104,14 @@ class App:
                     green = 255
                     red = 0
                 #cv2.putText(frame, t, (10,50), font, 1, (red, green, 0), 2, cv2.LINE_AA)
-                for idx, (x, y) in enumerate(shape):
-                    if idx in range(48,68):
-                        #color points in mouth red
-                        if smiling:
-                            cv2.circle(frame, (x, y), 1, (0, 255, 0), -1)
-                        else:
-                            cv2.circle(frame, (x, y), 1, (255, 0, 0), -1)
-                    else:
-                        #color points in face blue
-                        pass #cv2.circle(frame, (x, y), 1, (255, 0, 0), -1)
+                if self.show_vector:
+                    for idx, (x, y) in enumerate(shape):
+                        if idx in range(48,68):
+                            #color points in mouth red
+                            if smiling:
+                                cv2.circle(frame, (x, y), 1, (0, 255, 0), -1)
+                            else:
+                                cv2.circle(frame, (x, y), 1, (255, 0, 0), -1)
             else:
                 self.is_smiling.set("Status: Face not Detected")
             frame = imutils.resize(frame, width=int(self.vid.width))
