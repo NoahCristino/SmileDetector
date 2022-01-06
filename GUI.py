@@ -15,10 +15,6 @@ class App:
     def __init__(self, window, window_title, video_source=0):
         self.window = PanedWindow(window)
 
-        check = Checkbutton(self.window, text="Choose Me !")
-        check.pack(side=RIGHT)
-        self.window.add(check)
-
         self.video_source = video_source
 
         # Opens computer webcam if possible
@@ -27,10 +23,23 @@ class App:
         # Create a canvas that can fit with the video source
         self.canvas = tkinter.Canvas(window, width=self.vid.width, height=self.vid.height)
 
-        self.canvas.pack()
+        self.canvas.grid(row=0, rowspan=3, column=0)
 
-        self.btn_snapshot = tkinter.Button(window, text="Snapshot", width=50, command=self.snapshot)
-        self.btn_snapshot.pack(anchor=tkinter.CENTER, expand=True)
+        # self.btn_snapshot = tkinter.Button(window, text="Snapshot", width=50, command=self.snapshot)
+        # self.btn_snapshot.pack(anchor=tkinter.CENTER, expand=True)
+
+        smalllogo = Image.open("smile_detector_logo.png")
+        smileimage = ImageTk.PhotoImage(smalllogo.resize((200, 200)))
+        smilelabel = Label(window, image=smileimage)
+        smilelabel.grid(row=0, column=1)
+
+        self.is_smiling = "Status: Not Smiling"
+
+        statuslabel = Label(window, text=self.is_smiling)
+        statuslabel.grid(row=1, column=1)
+
+        self.btn_check = Checkbutton(window, text="Show Vector Points", command=self.show_vector_points)
+        self.btn_check.grid(row=2, column=1)
 
         self.delay = 15
 
@@ -56,6 +65,10 @@ class App:
             image_name = "frame-" + time.strftime("%d-%m-%Y-%H-%M-%S") + ".jpg"
             cv2.imwrite(image_name,
                         cv2.cvtColor(frame, cv2.COLOR_RGB2BGR))
+
+    def show_vector_points(self):
+        # Shows the vector points on the mouth of the video feed
+        print("hello there")
 
     # Returns the frame from the video source
     def update(self):
@@ -112,7 +125,6 @@ class MainMenu:
         smileDetectorButton.grid(row=1, column=2)
         mainloop()
 
-
     def returnHome(self, currWindow):
         currWindow.withdraw()
         self.root.deiconify()
@@ -125,7 +137,8 @@ class MainMenu:
         T = Text(aboutWindow, height=13, width=70, wrap=WORD, insertborderwidth=2, pady=10)
         l = Label(aboutWindow, text="About This Project")
         l.config(font=("Courier", 18))
-        backButton = Button(aboutWindow, text="Return To Main Menu", command=lambda: self.returnHome(aboutWindow), pady=10)
+        backButton = Button(aboutWindow, text="Return To Main Menu", command=lambda: self.returnHome(aboutWindow),
+                            pady=10)
         textBody = """SmileDetector is a web application that uses machine learning to detect and rate smiles. SmileDetector will calculate your ideal smile based off of your facial structure so that you can smile better in pictures. Machine learning accurately scans and maps facial vectors to your face to measure and track your facial structure and movements. After using SmileDetector you will never have to worry about posing for photos again. Soon you will be able to smile perfectly the second you see a camera."""
         T.insert(tkinter.END, textBody)
         T.config(state=DISABLED)
@@ -154,8 +167,6 @@ class MainMenu:
 
     def smileButtonFunction(self):
         App(tkinter.Toplevel(), "Smile Window")
-
-
 
 
 if __name__ == '__main__':
