@@ -44,10 +44,11 @@ class App:
         smileimage = ImageTk.PhotoImage(smalllogo.resize((200, 200)))
         smilelabel = Label(window, image=smileimage)
         smilelabel.grid(row=0, column=1)
+        
+        self.is_smiling = StringVar()
+        self.is_smiling.set("Status: Face not Deteced")
 
-        self.is_smiling = "Status: Not Smiling"
-
-        statuslabel = Label(window, text=self.is_smiling)
+        statuslabel = Label(window, textvariable=self.is_smiling)
         statuslabel.grid(row=1, column=1)
 
         self.btn_check = Checkbutton(window, text="Show Vector Points", command=self.show_vector_points)
@@ -92,14 +93,14 @@ class App:
             shape = image_score(frame)
             if np.ndim(shape) != 0:
                 font = cv2.FONT_HERSHEY_SIMPLEX
-                t = "no smile"
+                self.is_smiling.set("Status: Not Smiling")
                 green = 0
                 red = 255
                 if predict(frame):
-                    t = "smile"
+                    self.is_smiling.set("Status: Smiling")
                     green = 255
                     red = 0
-                cv2.putText(frame, t, (10,50), font, 1, (red, green, 0), 2, cv2.LINE_AA)
+                #cv2.putText(frame, t, (10,50), font, 1, (red, green, 0), 2, cv2.LINE_AA)
                 for idx, (x, y) in enumerate(shape):
                     if idx in range(48,68):
                         #color points in mouth red
@@ -107,7 +108,8 @@ class App:
                     else:
                         #color points in face blue
                         pass #cv2.circle(frame, (x, y), 1, (255, 0, 0), -1)
-
+            else:
+                self.is_smiling.set("Status: Face not Detected")
             self.photo = PIL.ImageTk.PhotoImage(image=PIL.Image.fromarray(frame))
             self.canvas.create_image(0, 0, image=self.photo, anchor=tkinter.NW)
 
