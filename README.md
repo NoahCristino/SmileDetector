@@ -1,6 +1,6 @@
 # SmileDetector
-https://utmist.gitlab.io/projects/smiledetector/
-
+<!-- https://utmist.gitlab.io/projects/smiledetector/
+ -->
 <!-- # [![Contributors][contributors-shield]][contributors-url] -->
 
 [![LinkedIn][linkedin-shield]][linkedin-url]
