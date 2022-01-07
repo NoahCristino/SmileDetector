@@ -23,7 +23,7 @@ https://utmist.gitlab.io/projects/smiledetector/
 
 **smilemodel.py** - trains model
 
-[![Contributors][contributors-shield]][contributors-url]
+[//]: # [![Contributors][contributors-shield]][contributors-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 
