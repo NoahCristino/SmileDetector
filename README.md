@@ -1,32 +1,10 @@
 # SmileDetector
 https://utmist.gitlab.io/projects/smiledetector/
 
-# Files
-
-**build_data.py** - generates pandas dataframe using images in genki folder
-
-**facePoints.py** - library containing functions:
-
-* *predict*: makes prediction with model
-
-* *localize*: rotates detected points on face to ensure correct orientation and scales based on image size
-
-* *image_score*: generates list of points on mouth
-
-**facial.py** - remove and incorporate into GUI (live prediction on webcam)
-
-**GUI.py** - runs live webcam feed with GUI
-
-**mainMenu.py** - main menu that displays credits and calls GUI (should we merge GUI and mainMenu into 1 file?)
-
-**smileload.py** - takes in 1 argument which is an image file to run model prediction on
-
-**smilemodel.py** - trains model
-
 <!-- # [![Contributors][contributors-shield]][contributors-url] -->
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
-
+<p align="center">
+    [![LinkedIn][linkedin-shield]][linkedin-url]
+</p>
 
 <!-- PROJECT LOGO -->
 <br />
@@ -72,10 +50,10 @@ https://utmist.gitlab.io/projects/smiledetector/
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-
+<!-- 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email`, `email_client`, `project_title`, `project_description`
+Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email`, `email_client`, `project_title`, `project_description` -->
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -83,14 +61,9 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 
 ### Built With
 
-* [Next.js](https://nextjs.org/)
-* [React.js](https://reactjs.org/)
-* [Vue.js](https://vuejs.org/)
-* [Angular](https://angular.io/)
-* [Svelte](https://svelte.dev/)
-* [Laravel](https://laravel.com)
-* [Bootstrap](https://getbootstrap.com)
-* [JQuery](https://jquery.com)
+* [OpenCV](https://opencv.org/)
+* [scikit-learn](https://scikit-learn.org/stable/)
+* [tkinter](https://docs.python.org/3/library/tkinter.html)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -99,31 +72,27 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
+You will need to install librarires that are used in this project using:
+* pip
   ```sh
-  npm install npm@latest -g
+  pip3 install LIBRARY_NAME
   ```
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone the repo
    ```sh
-   git clone https://github.com/github_username/repo_name.git
+   git@github.com:NoahCristino/SmileDetector.git
    ```
 3. Install NPM packages
    ```sh
-   npm install
+   pip3 install LIBRARY_NAME
    ```
-4. Enter your API in `config.js`
+4. Run `GUI.py`
    ```js
-   const API_KEY = 'ENTER YOUR API';
+   python3 GUI.py
    ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -133,16 +102,34 @@ This is an example of how to list things you need to use the software and how to
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+### Files
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+**build_data.py** - generates pandas dataframe using images in genki folder
+
+**facePoints.py** - library containing functions:
+
+* *predict*: makes prediction with model
+
+* *localize*: rotates detected points on face to ensure correct orientation and scales based on image size
+
+* *image_score*: generates list of points on mouth
+
+**facial.py** - remove and incorporate into GUI (live prediction on webcam)
+
+**GUI.py** - runs live webcam feed with GUI
+
+**mainMenu.py** - main menu that displays credits and calls GUI (should we merge GUI and mainMenu into 1 file?)
+
+**smileload.py** - takes in 1 argument which is an image file to run model prediction on
+
+**smilemodel.py** - trains model
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
 
 <!-- ROADMAP -->
-## Roadmap
+<!-- ## Roadmap
 
 - [] Feature 1
 - [] Feature 2
@@ -151,12 +138,12 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 See the [open issues](https://github.com/github_username/repo_name/issues) for a full list of proposed features (and known issues).
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+<p align="right">(<a href="#top">back to top</a>)</p> -->
 
 
 
 <!-- CONTRIBUTING -->
-## Contributing
+<!-- ## Contributing
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
@@ -170,24 +157,24 @@ Don't forget to give the project a star! Thanks again!
 5. Open a Pull Request
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
+ -->
 
 
 <!-- LICENSE -->
-## License
+<!-- ## License
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
+ -->
 
 
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
+Noah Cristino - noahcristino@yahoo.com
 
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
+Project Link: [https://github.com/NoahCristino/SmileDetector](https://github.com/NoahCristino/SmileDetector)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
