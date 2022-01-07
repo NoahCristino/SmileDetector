@@ -5,6 +5,7 @@ import PIL.Image, PIL.ImageTk
 import time
 from pygame import mixer
 from tkinter import *
+from tkinter.ttk import *
 from PIL import ImageTk, Image
 from imutils.video import VideoStream
 from imutils import face_utils
@@ -17,7 +18,7 @@ from facePoints import image_score
 from facePoints import predict
 detector = dlib.get_frontal_face_detector()
 predictor = dlib.shape_predictor("t.dat")
-time.sleep(2.0) #not sure if nessicary
+#time.sleep(2.0) #not sure if nessicary
 
 mixer.init()
 
@@ -54,7 +55,8 @@ class App:
 
         self.btn_check = Checkbutton(window, text="Show Vector Points", command=self.show_vector_points)
         self.btn_check.grid(row=2, column=1)
-
+        self.btn_check.invoke()
+        
         self.delay = 15
 
         self.update()
@@ -150,19 +152,21 @@ class MainMenu:
 
     def __init__(self):
         self.root = Tk()
+
+        style = Style(self.root)
+        self.root.tk.call('source', 'azure.tcl')
+        self.root.tk.call("set_theme", "light")
+
         self.root.geometry("530x670")
         self.root.title('Main Menu')
         smileImage = ImageTk.PhotoImage(Image.open("smile_detector_logo.png"))
         smileLabel = Label(self.root, image=smileImage)
         smileLabel.grid(row=0, column=0, columnspan=3, padx=10, pady=10)
-        aboutButton = Button(self.root, text="About This Project", command=self.aboutButtonFunction, height=3,
-                             highlightbackground="#586fad")
+        aboutButton = Button(self.root, text="About This Project", command=self.aboutButtonFunction)
         aboutButton.grid(row=1, column=0)
-        creditsButton = Button(self.root, text="Credits", command=self.creditsButtonFunction, height=3,
-                               highlightbackground="#586fad")
+        creditsButton = Button(self.root, text="Credits", command=self.creditsButtonFunction)
         creditsButton.grid(row=1, column=1)
-        smileDetectorButton = Button(self.root, text="Smile Detector", command=self.smileButtonFunction, height=3,
-                                     highlightbackground="#586fad")
+        smileDetectorButton = Button(self.root, text="Smile Detector", command=self.smileButtonFunction)
         smileDetectorButton.grid(row=1, column=2)
         mainloop()
 
@@ -178,8 +182,7 @@ class MainMenu:
         T = Text(aboutWindow, height=13, width=70, wrap=WORD, insertborderwidth=2, pady=10)
         l = Label(aboutWindow, text="About This Project")
         l.config(font=("Courier", 18))
-        backButton = Button(aboutWindow, text="Return To Main Menu", command=lambda: self.returnHome(aboutWindow),
-                            pady=10)
+        backButton = Button(aboutWindow, text="Return To Main Menu", command=lambda: self.returnHome(aboutWindow))
         textBody = """SmileDetector is a web application that uses machine learning to detect and rate smiles. SmileDetector will calculate your ideal smile based off of your facial structure so that you can smile better in pictures. Machine learning accurately scans and maps facial vectors to your face to measure and track your facial structure and movements. After using SmileDetector you will never have to worry about posing for photos again. Soon you will be able to smile perfectly the second you see a camera."""
         T.insert(tkinter.END, textBody)
         T.config(state=DISABLED)
@@ -197,8 +200,7 @@ class MainMenu:
         T.config(state=DISABLED)
         l = Label(creditsWindow, text="Project Credits")
         l.config(font=("Courier", 18))
-        backButton = Button(creditsWindow, text="Return To Main Menu", command=lambda: self.returnHome(creditsWindow),
-                            pady=10)
+        backButton = Button(creditsWindow, text="Return To Main Menu", command=lambda: self.returnHome(creditsWindow))
         textBody = """SmileDetector is a web application that uses machine learning to detect and rate smiles. SmileDetector will calculate your ideal smile based off of your facial structure so that you can smile better in pictures. Machine learning accurately scans and maps facial vectors to your face to measure and track your facial structure and movements. After using SmileDetector you will never have to worry about posing for photos again. Soon you will be able to smile perfectly the second you see a camera."""
         T.insert(tkinter.END, textBody)
         l.pack()
