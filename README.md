@@ -24,8 +24,8 @@ https://utmist.gitlab.io/projects/smiledetector/
 **smilemodel.py** - trains model
 
 
-[![Contributors][contributors-shield]][https://github.com/NoahCristino/SmileDetector/graphs/contributors]
-[![Website][linkedin-shield]][https://utmist.gitlab.io/projects/smiledetector/]
+[!][Contributors][contributors-shield]][https://github.com/NoahCristino/SmileDetector/graphs/contributors]
+[!][Website][linkedin-shield]][https://utmist.gitlab.io/projects/smiledetector/]
 
 
 
