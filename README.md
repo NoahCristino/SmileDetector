@@ -2,9 +2,8 @@
 https://utmist.gitlab.io/projects/smiledetector/
 
 <!-- # [![Contributors][contributors-shield]][contributors-url] -->
-<p align="center">
-    [![LinkedIn][linkedin-shield]][linkedin-url]
-</p>
+
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
 <!-- PROJECT LOGO -->
 <br />
