@@ -93,7 +93,10 @@ def localize(points):
     
 def predict(img):
     clf = joblib.load('model.pkl')
-    vertex = localize(image_score(img))
+    p = image_score(img)
+    if (p is None):
+      return False
+    vertex = localize(p)
     v_in = np.asarray([j for sub in vertex for j in sub], dtype=np.float32)
     prediction = clf.predict([v_in])
     return bool(int(prediction[0]))
