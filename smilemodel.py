@@ -29,7 +29,7 @@ correct = 0
 for idx, inpu in enumerate(x):
     o = clf.predict([inpu])
     if o == y[idx]:
-        correct+=1
+        correct+=1+
     total+=1
 
 print("accuracy: "+str(correct/total))

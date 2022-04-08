@@ -15,6 +15,7 @@ import dlib
 import numpy as np
 from facePoints import image_score
 from facePoints import predict
+import time
 detector = dlib.get_frontal_face_detector()
 predictor = dlib.shape_predictor("t.dat")
 time.sleep(2.0) #not sure if nessicary
