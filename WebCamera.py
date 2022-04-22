@@ -24,8 +24,9 @@ mixer.init()
 class VideoCamera:
 
     def __init__(self, video_source=0):
-
-        self.vid = cv2.VideoCapture(video_source)
+        self.smiling = False
+        self.history = [0,0,0,0,0,0,0,0,0,0]
+        self.vid = cv2.VideoCapture(0)
         self.show_vector = True
         # self.is_smiling = StringVar()
         # self.is_smiling.set("Status: Face not Deteced")
@@ -44,6 +45,22 @@ class VideoCamera:
             else:
                 return None
 
+    def gen_panel(self,h,w):
+        frame = np.zeros((h, w, 3), np.uint8)
+        pts = []
+        for idx, x_val in enumerate(self.history):
+            p1 = int(300/(idx+1))
+            p2 = int(30+(30*(1-x_val)))
+            pts.append((p1,p2))
+        lines = []
+        for idx, pt in enumerate(pts):
+            if idx+1 <= len(pts)-1:
+                lines.append([pts[idx],pts[idx+1]])
+        #cv2.circle(frame, (p1,p2), 1, (0, 0, 255),-1)
+        for line in lines:
+            cv2.line(frame, (line[0][0], line[0][1]), (line[1][0], line[1][1]), (0, 255, 0), 2)
+        return  frame
+
     def process_frame(self, frame):
         frame = imutils.resize(frame, width=400)
         shape = image_score(frame)
@@ -53,6 +70,11 @@ class VideoCamera:
             if predict(frame):
                 # self.is_smiling.set("Status: Smiling")
                 smiling = True
+            self.smiling = smiling
+            sh = self.history
+            sh.pop(len(sh)-1)
+            sh = [int(smiling)] + sh
+            self.history = sh
             if self.show_vector:
                 for idx, (x, y) in enumerate(shape):
                     if idx in range(48,68):
@@ -63,6 +85,14 @@ class VideoCamera:
                             cv2.circle(frame, (x, y), 1, (255, 0, 0), -1)
             # else:
                 # self.is_smiling.set("Status: Face not Detected")
+
+        #frame design goes here
+        h, w, c = frame.shape
+        background = np.zeros((200, w, 3), np.uint8)
+        panel = self.gen_panel(h+200, 640-w)
+        frame = cv2.vconcat([frame, background])
+        frame = cv2.hconcat([frame, panel])
+        #end frame design 
 
         ret, jpeg = cv2.imencode('.jpg', cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
         return jpeg.tobytes()

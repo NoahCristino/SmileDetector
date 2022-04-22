@@ -1,9 +1,15 @@
 <!DOCTYPE html>
   <head>
-    <title>Video Streaming Demonstration</title>
+    <title>Enter video URL</title>
   </head>
   <body>
-    <h1>Video Streaming Demonstration</h1>
-    <img id="bg" src="{{ url_for('video_feed') }}">
+    <h1>Enter video url:</h1>
+    <form action="/video" method="POST">
+      <div class="form-group">
+        <label>Video URL</label>
+        <input type="text" class="form-control" id="video_url" name="video_url">
+      </div>
+      <button type="submit" class="btn btn-primary">Watch</button>
+    </form>
   </body>
 </html>

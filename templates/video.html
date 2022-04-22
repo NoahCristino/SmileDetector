@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+  <head>
+    <title>Video Streaming Demonstration</title>
+  </head>
+  <body style="background-color:black;">
+    <center>
+    <h1>Video Streaming Demonstration</h1>
+    <iframe id="ytplayer" type="text/html" width="640" height="360"
+  src="https://www.youtube.com/embed/{{ url }}?autoplay=1&mute=1&enablejsapi=1"
+  frameborder="0"></iframe><br><hl></hl>
+    <img id="bg" src="{{ url_for('video_feed') }}">
+    </center>
+  </body>
+</html>
