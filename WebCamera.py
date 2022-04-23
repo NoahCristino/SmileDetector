@@ -2,7 +2,7 @@ import os
 import cv2
 #import PIL.Image
 import time
-from pygame import mixer
+#from pygame import mixer
 #from tkinker import *
 #from PIL import ImageTk, Image
 from imutils.video import VideoStream
@@ -16,9 +16,9 @@ from facePoints import image_score
 from facePoints import predict
 detector = dlib.get_frontal_face_detector()
 predictor = dlib.shape_predictor("t.dat")
-time.sleep(2.0) #not sure if nessicary
+#time.sleep(2.0) #not sure if nessicary
 
-mixer.init()
+#mixer.init()
 
 class VideoCamera:
 
