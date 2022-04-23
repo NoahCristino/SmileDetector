@@ -1,10 +1,9 @@
 import os
-import tkinter
 import cv2
 import PIL.Image, PIL.ImageTk
 import time
 from pygame import mixer
-from tkinter import *
+#from tkinker import *
 from PIL import ImageTk, Image
 from imutils.video import VideoStream
 from imutils import face_utils
