@@ -22,11 +22,11 @@
     
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap&subset=latin-ext" rel="stylesheet">
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/fontawesome-all.css" rel="stylesheet">
-    <link href="css/swiper.css" rel="stylesheet">
-	<link href="css/magnific-popup.css" rel="stylesheet">
-	<link href="css/styles.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/bootstrap.css')}}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/fontawesome-all.css')}}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/swiper.css')}}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/magnific-popup.css')}}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/styles.css')}}" rel="stylesheet">
 	
 	<!-- Favicon  -->
     <link rel="icon" href="images/favicon.png">
@@ -88,7 +88,7 @@
                         <h1>SmileDetector - UTMIST</h1>
                         <p class="p-large p-heading">Big long description of our project long long long lorem ipsum doloret idk what comes after this</p>
                         <a class="btn-solid-lg" href="#your-link"><i class="fab fa-apple"></i>Read Our Medium Article</a>
-                        <a class="btn-solid-lg" href="#your-link"><i class="fab fa-google-play"></i>Launch Demo Product</a>
+                        <a class="btn-solid-lg" href="/run"><i class="fab fa-google-play"></i>Launch Demo Product</a>
                     </div> <!-- end of text-container -->
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
@@ -443,13 +443,13 @@
     
     	
     <!-- Scripts -->
-    <script src="js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
-    <script src="js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
-    <script src="js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
-    <script src="js/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
-    <script src="js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
-    <script src="js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
-    <script src="js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
-    <script src="js/scripts.js"></script> <!-- Custom scripts -->
+    <script src="{{ url_for('static', filename='js/jquery.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/popper.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.easing.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/swiper.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.magnific-popup.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/validator.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/scripts.js')}}"></script>
 </body>
 </html>
