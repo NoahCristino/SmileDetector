@@ -8,7 +8,7 @@ Flask==1.1.2
 gunicorn
 idna==3.3
 imutils==0.5.3
-itsdangerous
+itsdangerous==2.0.1
 Jinja2<3.1.0
 joblib==1.1.0
 MarkupSafe
