@@ -27,12 +27,12 @@ def test_connect():
 
 @app.route('/run')
 def run_demo():
-    return render_template('index.html')
+    return render_template('run.html')
 
 @app.route('/')
 def index():
     # rendering webpage
-    return render_template('demo.html')
+    return render_template('index.html')
 
 def gen(Camera):
     while True:
