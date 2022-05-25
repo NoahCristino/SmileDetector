@@ -12,7 +12,7 @@
     <img src="https://utmist.gitlab.io/projects/smiledetector/smile_hu1f2c665efb998e6a3fe75cbd3952c625_43861_600x0_resize_box_2.png" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">SmileDetector: Detecting and Rating Smiles</h3>
+<h3 align="center">SmileDetector: Detecting Smiles and More</h3>
 
   <p align="center">
     The Smile Detector project detects smiles in images and videos using a new multi-step approach which consists of first performing facial recognition and then running the detected facial vectors though our custom C-Support Vector Classification model. Machine learning accurately scans and maps facial vectors to your face to measure and track your facial structure and movements. By reducing the model input size and approaching this problem in a new way we were able to produce a model that can perform classifications with high accuracy in fractions of the time that traditional models take. The project not only detects if a user is smiling, but also includes a video parsing feature that takes in a video input and returns only the sections where somebody is smiling.
