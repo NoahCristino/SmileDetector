@@ -1,15 +1,455 @@
 <!DOCTYPE html>
-  <head>
-    <title>Enter video URL</title>
-  </head>
-  <body>
-    <h1>Enter video url:</h1>
-    <form action="/video" method="POST">
-      <div class="form-group">
-        <label>Video URL</label>
-        <input type="text" class="form-control" id="video_url" name="video_url">
-      </div>
-      <button type="submit" class="btn btn-primary">Watch</button>
-    </form>
-  </body>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Sync is a landing page HTML template built with Bootstrap 4 for presenting mobile apps to the online audience and for getting visitors to become users.">
+    <meta name="author" content="Inovatik">
+
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
+	<meta property="og:site_name" content="" /> <!-- website name -->
+	<meta property="og:site" content="" /> <!-- website link -->
+	<meta property="og:title" content=""/> <!-- title shown in the actual shared post -->
+	<meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
+	<meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
+	<meta property="og:url" content="" /> <!-- where do you want your post to link to -->
+	<meta property="og:type" content="article" />
+
+    <!-- Webpage Title -->
+    <title>SmileDetector - UTMIST</title>
+    
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap&subset=latin-ext" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/bootstrap.css')}}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/fontawesome-all.css')}}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/swiper.css')}}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/magnific-popup.css')}}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/styles.css')}}" rel="stylesheet">
+	
+	<!-- Favicon  -->
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.png')}}">
+</head>
+<body data-spy="scroll" data-target=".fixed-top">
+    
+    <!-- Preloader -->
+	<div class="spinner-wrapper">
+        <div class="spinner">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+        </div>
+    </div>
+    <!-- end of preloader -->
+    
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+        <div class="container">
+            <!-- Text Logo - Use this if you don't have a graphic logo -->
+            <a class="navbar-brand logo-text page-scroll" href="index.html">SmileDetector</a>
+
+            <!-- Image Logo -->
+            <a class="navbar-brand logo-image" href="index.html"><img src="{{ url_for('static', filename='images/logo.png')}}" alt="alternative"></a>
+            
+            <!-- Mobile Menu Toggle Button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-awesome fas fa-bars"></span>
+                <span class="navbar-toggler-awesome fas fa-times"></span>
+            </button>
+            <!-- end of mobile menu toggle button -->
+
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="#">DESCRIPTION <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="#features">FEATURES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="#screens">ABOUT</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div> <!-- end of container -->
+    </nav> <!-- end of navbar -->
+    <!-- end of navigation -->
+
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-container">
+                        <h1>SmileDetector - UTMIST</h1>
+                        <p class="p-large p-heading">Big long description of our project long long long lorem ipsum doloret idk what comes after this</p>
+                        <a class="btn-solid-lg" href="#your-link"><i class="fab fa-apple"></i>Read Our Medium Article</a>
+                        <a class="btn-solid-lg" href="/run"><i class="fab fa-google-play"></i>Launch Demo Product</a>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="image-container">
+                        <img class="img-fluid" src="{{ url_for('static', filename='images/header-iphone.png')}}" alt="alternative">
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+        <div class="deco-white-circle-1">
+            <img src="{{ url_for('static', filename='images/decorative-white-circle.svg')}}" alt="alternative">
+        </div> <!-- end of deco-white-circle-1 -->
+        <div class="deco-white-circle-2">
+            <img src="{{ url_for('static', filename='images/decorative-white-circle.svg')}}" alt="alternative">
+        </div> <!-- end of deco-white-circle-2 -->
+        <div class="deco-blue-circle">
+            <img src="{{ url_for('static', filename='images/decorative-blue-circle.svg')}}" alt="alternative">
+        </div> <!-- end of deco-blue-circle -->
+        <div class="deco-yellow-circle">
+            <img src="{{ url_for('static', filename='images/decorative-yellow-circle.svg')}}" alt="alternative">
+        </div> <!-- end of deco-yellow-circle -->
+        <div class="deco-green-diamond">
+            <img src="{{ url_for('static', filename='images/decorative-green-diamond.svg')}}" alt="alternative">
+        </div> <!-- end of deco-yellow-circle -->
+    </header> <!-- end of header -->
+    <!-- end of header -->
+
+
+    <!-- Small Features -->
+    <div class="cards-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    
+                    <!-- Card -->
+                    <div class="card">
+                        <div class="card-image">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Realtime Emotion Detection</h5>
+                        </div>
+                    </div>
+                    <!-- end of card -->
+
+                    <!-- Card -->
+                    <div class="card">
+                        <div class="card-image green">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Fastest Existing Model</h5>
+                        </div>
+                    </div>
+                    <!-- end of card -->
+
+                    <!-- Card -->
+                    <div class="card">
+                        <div class="card-image red">
+                            <i class="fas fa-cog"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Lightweight</h5>
+                        </div>
+                    </div>
+                    <!-- end of card -->
+
+                    <!-- Card -->
+                    <div class="card">
+                        <div class="card-image yellow">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Facial Tracking</h5>
+                        </div>
+                    </div>
+                    <!-- end of card -->
+
+                    <!-- Card -->
+                    <div class="card">
+                        <div class="card-image blue">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Something goes here</h5>
+                        </div>
+                    </div>
+                    <!-- end of card -->
+
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of cards-1 -->
+    <!-- end of small features -->
+
+
+    
+
+    <!-- Features -->
+    <div id="features" class="basic-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>Features</h2>
+                    <p class="p-heading">Sync's features are designed to help you improve your time management skills and become a better organized person. Organize your tasks, schedule your appointments and meet your personal development goals with Sync</p>
+                </div> <!-- end of div -->
+            </div> <!-- end of div -->
+            <div class="row">
+                <div class="col-lg-4">
+                    <ul class="list-unstyled li-space-lg first">
+                        <li class="media">
+                            <span class="fa-stack">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-users fa-stack-1x"></i>
+                            </span>
+                            <div class="media-body">
+                                <h4>Goal Setting</h4>
+                                <p>Like any self improving process, everything starts with setting your goals and committing to them</p>
+                            </div>
+                        </li>
+                        <li class="media">
+                            <span class="fa-stack">
+                                <i class="fas fa-circle fa-stack-2x green"></i>
+                                <i class="fas fa-code fa-stack-1x"></i>
+                            </span>
+                            <div class="media-body">
+                                <h4>Situation Analysis</h4>
+                                <p>Sync provides a well designed and ergonomic visual editor for you to edit your quick notes</p>
+                            </div>
+                        </li>
+                        <li class="media">
+                            <span class="fa-stack">
+                                <i class="fas fa-circle fa-stack-2x red"></i>
+                                <i class="fas fa-cog fa-stack-1x"></i>
+                            </span>
+                            <div class="media-body">
+                                <h4>Tasks Settings</h4>
+                                <p>Each option packaged in the app's menus is provided in order to improve you personally</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div> <!-- end of col -->
+                <div class="col-lg-4">
+                    <img class="img-fluid" src="{{ url_for('static', filename='images/features-app.jpg')}}" alt="alternative">
+                </div> <!-- end of col -->
+                <div class="col-lg-4">
+                    <ul class="list-unstyled li-space-lg">
+                        <li class="media">
+                            <span class="fa-stack">
+                                <i class="fas fa-circle fa-stack-2x yellow"></i>
+                                <i class="fas fa-comments fa-stack-1x"></i>
+                            </span>
+                            <div class="media-body">
+                                <h4>Social Interaction</h4>
+                                <p>Schedule your appointments, meetings and periodical evaluations using the tools</p>
+                            </div>
+                        </li>
+                        <li class="media">
+                            <span class="fa-stack">
+                                <i class="fas fa-circle fa-stack-2x blue"></i>
+                                <i class="fas fa-rocket fa-stack-1x"></i>
+                            </span>
+                            <div class="media-body">
+                                <h4>Get Things Done</h4>
+                                <p>Reading focus mode for long form articles, ebooks and other materials with long text</p>
+                            </div>
+                        </li>
+                        <li class="media">
+                            <span class="fa-stack">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-download fa-stack-1x"></i>
+                            </span>
+                            <div class="media-body">
+                                <h4>Good Foundation</h4>
+                                <p>Get a solid foundation for your self development efforts. Try Sync mobile app for devices</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-2 -->
+    <!-- end of features -->
+    <!-- Testimonials -->
+    <div class="cards-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>Team</h2>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <!-- Card -->
+                    <div class="card">
+                        <div class="card-image">
+							<img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar" style="width:200px; border-radius: 50%;">
+                            <hr class="testimonial-line">
+                        </div>
+                        <div class="card-body">
+                            <div class="testimonial-text">I love using Sync for my personal development needs. It meets all my requirements and it actually helps a lot with focusing skills.</div>
+                            <div class="testimonial-author">Rick Jones - Designer</div>
+                        </div>
+                    </div>
+                    <!-- end of card -->
+
+                    <!-- Card -->
+                    <div class="card">
+                        <div class="card-image">
+							<img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar" style="width:200px; border-radius: 50%;">
+                            <hr class="testimonial-line">
+                        </div>
+                        <div class="card-body">
+                            <div class="testimonial-text">After trying out a large number of personal coaching apps I decided to give Sync a try and what a wonderful surprise it was.</div>
+                            <div class="testimonial-author">Lynda Marquez - Developer</div>
+                        </div>
+                    </div>
+                    <!-- end of card -->
+
+                    <!-- Card -->
+                    <div class="card">
+                        <div class="card-image">
+							<img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar" style="width:200px; border-radius: 50%;">
+                            <hr class="testimonial-line">
+                        </div>
+                        <div class="card-body">
+                            <div class="testimonial-text">Never dreamed I could learn so fast how to focus on my personal goals and improve my life to levels I never thought possible.</div>
+                            <div class="testimonial-author">Jay Frisco - Marketer</div>
+                        </div>
+                    </div>
+					
+					<div class="card">
+                        <div class="card-image">
+							<img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar" style="width:200px; border-radius: 50%;">
+                            <hr class="testimonial-line">
+                        </div>
+                        <div class="card-body">
+                            <div class="testimonial-text">Never dreamed I could learn so fast how to focus on my personal goals and improve my life to levels I never thought possible.</div>
+                            <div class="testimonial-author">Jay Frisco - Marketer</div>
+                        </div>
+                    </div>
+                    <!-- end of card -->
+
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="image-container">
+                        <img class="img-fluid" src="{{ url_for('static', filename='images/customer-logo-1.png')}}" alt="alternative">
+                        <img class="img-fluid" src="{{ url_for('static', filename='images/customer-logo-2.png')}}" alt="alternative">
+                        <img class="img-fluid" src="{{ url_for('static', filename='images/customer-logo-3.png')}}" alt="alternative">
+                        <img class="img-fluid" src="{{ url_for('static', filename='images/customer-logo-4.png')}}" alt="alternative">
+                        <img class="img-fluid" src="{{ url_for('static', filename='images/customer-logo-5.png')}}" alt="alternative">
+                    </div> <!-- end of image-container -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+
+        </div> <!-- end of container -->
+    </div> <!-- end of cards-2 -->
+    <!-- end of testimonials -->
+
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="footer-col first">
+                        <h5>About Sync</h5>
+                        <p class="p-small">Sync is a landing page HTML template built with Bootstrap 4 for presenting mobile apps</p>
+                    </div> <!-- end of footer-col -->
+                    <div class="footer-col second">
+                        <h5>Contact Info</h5>
+                        <ul class="list-unstyled li-space-lg p-small">
+                            <li class="media">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div class="media-body">22 Innovation Street, CA, US</div>
+                            </li>
+                            <li class="media">
+                                <i class="fas fa-envelope"></i>
+                                <div class="media-body"><a href="#your-link">office@syncmobile.com</a></div>
+                            </li>
+                            <li class="media">
+                                <i class="fas fa-phone-alt"></i>
+                                <div class="media-body"><a href="#your-link">+44 376 945 23</a></div>
+                            </li>
+                        </ul>
+                    </div> <!-- end of footer-col -->
+                    <div class="footer-col third">
+                        <h5>Value Links</h5>
+                        <ul class="list-unstyled li-space-lg p-small">
+                            <li><a href="terms-conditions.html">Terms & Conditions</a></li>
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                            <li><a href="article-details.html">Article Details</a></li>
+                        </ul>
+                    </div> <!-- end of footer-col -->
+                    <div class="footer-col fourth">
+                        <h5>Other Apps</h5>
+                        <ul class="list-unstyled li-space-lg p-small">
+                            <li><a href="#your-link">Scientific Calculator</a></li>
+                            <li><a href="#your-link">Advanced Timer</a></li>
+                            <li><a href="#your-link">Music Store</a></li>
+                        </ul>
+                    </div> <!-- end of footer-col -->
+                    <div class="footer-col fifth">
+                        <span class="fa-stack">
+                            <a href="#your-link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-facebook-f fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack">
+                            <a href="#your-link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-twitter fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack">
+                            <a href="#your-link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-pinterest-p fa-stack-1x"></i>
+                            </a>
+                        </span>
+                        <span class="fa-stack">
+                            <a href="#your-link">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-instagram fa-stack-1x"></i>
+                            </a>
+                        </span>
+                    </div> <!-- end of footer-col -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of footer -->  
+    <!-- end of footer -->
+
+
+    <!-- Copyright -->
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="p-small">Copyright © 2022 <a href="https://smiledetector.herokuapp.com">SmileDetector</a> - All rights reserved</p>
+                </div> <!-- end of col -->
+            </div> <!-- enf of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of copyright --> 
+    <!-- end of copyright -->
+    
+    	
+    <!-- Scripts -->
+    <script src="{{ url_for('static', filename='js/jquery.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/popper.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.easing.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/swiper.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.magnific-popup.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/validator.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/scripts.js')}}"></script>
+</body>
 </html>

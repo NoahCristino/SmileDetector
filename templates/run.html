@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="SmileDetector is a UTMIST Project. Visit https://smiledetector.herokuapp.com for more info.">
+    <meta name="author" content="Inovatik">
+
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
+	<meta property="og:site_name" content="SmileDetector" /> <!-- website name -->
+	<meta property="og:site" content="https://smiledetector.herokuapp.com" /> <!-- website link -->
+	<meta property="og:title" content="SmileDetector"/> <!-- title shown in the actual shared post -->
+	<meta property="og:description" content="SmileDetector is a UTMIST Project. Visit https://smiledetector.herokuapp.com for more info." /> <!-- description shown in the actual shared post -->
+	<meta property="og:image" content="https://smiledetector.herokuapp.com/static/images/logo.png" /> <!-- image link, make sure it's jpg -->
+	<meta property="og:url" content="https://smiledetector.herokuapp.com" /> <!-- where do you want your post to link to -->
+	<meta property="og:type" content="article" />
+
+    <!-- Webpage Title -->
+    <title>SmileDetector - Demo</title>
+    
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap&subset=latin-ext" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/bootstrap.css')}}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/fontawesome-all.css')}}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/swiper.css')}}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/magnific-popup.css')}}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/styles.css')}}" rel="stylesheet">
+	
+	<!-- Favicon  -->
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.png')}}">
+</head>
+<body data-spy="scroll" data-target=".fixed-top">
+    
+    <!-- Preloader -->
+	<div class="spinner-wrapper">
+        <div class="spinner">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+        </div>
+    </div>
+    <!-- end of preloader -->
+
+
+    <!-- Privacy Content -->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    
+                    <div class="text-container">
+                        <br>
+						<h1>Analyze Engagement</h1>
+						<br>
+						<form action="/video" method="POST">
+						<div class="form-group">
+							<label for="videolink" style="padding-left:20px;">Video link:</label>
+							<input type="text" class="form-control" id="video_url" name="video_url"><br><br>
+							<input class="btn-solid-reg" type="submit" value="Analyze">
+						</div>
+						</form>
+                    </div> <!-- end of text-container-->
+                    
+                </div> <!-- end of col-->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    <!-- end of ex-basic-2 -->
+    <!-- end of privacy content -->
+
+    
+   
+        
+    <!-- Scripts -->
+    <script src="{{ url_for('static', filename='js/jquery.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/popper.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.easing.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/swiper.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.magnific-popup.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/validator.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/scripts.js')}}"></script>
+</body>
+</html>
+
