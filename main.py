@@ -25,6 +25,10 @@ def test_message(input):
 def test_connect():
     app.logger.info("client connected")
 
+@app.route('/run')
+def run_demo():
+    return render_template('index.html')
+
 @app.route('/')
 def index():
     # rendering webpage
