@@ -47,18 +47,16 @@ class VideoCamera(object):
         After getting the image you can do any preprocessing here
         """
         #_______________________________________Performing some pre processing_______________________________________________
-
         bgr_image = self.process_frame(input_img)
         rgb_image = cv2.cvtColor(bgr_image, cv2.COLOR_BGR2RGB) # Changing color from bgr to rgb
-
 
         #______________________________________________________________________________________________________________________
 
         ret,rgb_jpeg = cv2.imencode('.jpg',rgb_image)
         _,bgr_jpeg = cv2.imencode('.jpg',bgr_image)
 
-        self.output_image_rgb.append(rgb_image.tobytes())
-        self.output_image_bgr.append(bgr_image.tobytes())
+        self.output_image_rgb.append(rgb_jpeg.tobytes())
+        self.output_image_bgr.append(bgr_jpeg.tobytes())
     
     def keep_processing(self):
         while True:
@@ -123,9 +121,11 @@ class VideoCamera(object):
         frame = cv2.hconcat([frame, panel])
         #end frame design 
 
-        ret, jpeg = cv2.imencode('.jpg', cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
-        return jpeg
+        #ret, jpeg = cv2.imencode('.jpg', cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
+        #return jpeg
         #return jpeg.tobytes()
+        #return frame
+        return frame
 
 
     def show_vector_points(self):
