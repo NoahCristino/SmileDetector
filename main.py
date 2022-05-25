@@ -31,8 +31,7 @@ def video():
     if r == None:
         return redirect('index.html')
     #format received: https://www.youtube.com/watch?v=iSMbRGTBOHU
-    if len(r[32:]) < 10:
-        return render_template('video.html', url=r[32:])
+    return render_template('video.html', url=r[32:])
 
 if __name__ == '__main__':
     # defining server ip address and port
