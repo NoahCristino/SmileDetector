@@ -51,16 +51,14 @@ class VideoCamera(object):
         bgr_image = cv2.flip(input_img, 1)  # Flip the image
         rgb_image = cv2.cvtColor(bgr_image, cv2.COLOR_BGR2RGB) # Changing color from bgr to rgb
 
-        rgb_image = self.process_frame(rgb_image)
-
 
         #______________________________________________________________________________________________________________________
 
         ret,rgb_jpeg = cv2.imencode('.jpg',rgb_image)
         _,bgr_jpeg = cv2.imencode('.jpg',bgr_image)
 
-        self.output_image_rgb.append(rgb_jpeg.tobytes())
-        self.output_image_bgr.append(bgr_jpeg.tobytes())
+        self.output_image_rgb.append(self.process_frame(rgb_jpeg))
+        self.output_image_bgr.append(self.process_frame(bgr_jpeg))
     
     def keep_processing(self):
         while True:
