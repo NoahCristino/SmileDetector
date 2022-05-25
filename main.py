@@ -31,6 +31,7 @@ def video():
     if r == None:
         return redirect('index.html')
     #format received: https://www.youtube.com/watch?v=iSMbRGTBOHU
+    print("url recieved: " + str(r))
     return render_template('video.html', url=r[32:])
 
 if __name__ == '__main__':
