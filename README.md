@@ -32,13 +32,6 @@
 
 
 
-<!-- CONTACT -->
-## Contact
-
-Noah Cristino - noahcristino@yahoo.com
-
-Project Link: [https://github.com/NoahCristino/SmileDetector](https://github.com/NoahCristino/SmileDetector)
-
 
 
 
