@@ -29,7 +29,7 @@
     <link href="{{ url_for('static', filename='css/styles.css')}}" rel="stylesheet">
 	
 	<!-- Favicon  -->
-    <link rel="icon" href="images/favicon.png">
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.png')}}">
 </head>
 <body data-spy="scroll" data-target=".fixed-top">
     
@@ -51,7 +51,7 @@
             <a class="navbar-brand logo-text page-scroll" href="index.html">SmileDetector</a>
 
             <!-- Image Logo -->
-            <a class="navbar-brand logo-image" href="index.html"><img src="images/logo.png" alt="alternative"></a>
+            <a class="navbar-brand logo-image" href="index.html"><img src="{{ url_for('static', filename='images/logo.png')}}" alt="alternative"></a>
             
             <!-- Mobile Menu Toggle Button -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -95,25 +95,25 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="image-container">
-                        <img class="img-fluid" src="images/header-iphone.png" alt="alternative">
+                        <img class="img-fluid" src="{{ url_for('static', filename='images/header-iphone.png')}}" alt="alternative">
                     </div> <!-- end of text-container -->
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of container -->
         <div class="deco-white-circle-1">
-            <img src="images/decorative-white-circle.svg" alt="alternative">
+            <img src="{{ url_for('static', filename='images/decorative-white-circle.svg')}}" alt="alternative">
         </div> <!-- end of deco-white-circle-1 -->
         <div class="deco-white-circle-2">
-            <img src="images/decorative-white-circle.svg" alt="alternative">
+            <img src="{{ url_for('static', filename='images/decorative-white-circle.svg')}}" alt="alternative">
         </div> <!-- end of deco-white-circle-2 -->
         <div class="deco-blue-circle">
-            <img src="images/decorative-blue-circle.svg" alt="alternative">
+            <img src="{{ url_for('static', filename='images/decorative-blue-circle.svg')}}" alt="alternative">
         </div> <!-- end of deco-blue-circle -->
         <div class="deco-yellow-circle">
-            <img src="images/decorative-yellow-circle.svg" alt="alternative">
+            <img src="{{ url_for('static', filename='images/decorative-yellow-circle.svg')}}" alt="alternative">
         </div> <!-- end of deco-yellow-circle -->
         <div class="deco-green-diamond">
-            <img src="images/decorative-green-diamond.svg" alt="alternative">
+            <img src="{{ url_for('static', filename='images/decorative-green-diamond.svg')}}" alt="alternative">
         </div> <!-- end of deco-yellow-circle -->
     </header> <!-- end of header -->
     <!-- end of header -->
@@ -234,7 +234,7 @@
                     </ul>
                 </div> <!-- end of col -->
                 <div class="col-lg-4">
-                    <img class="img-fluid" src="images/features-app.jpg" alt="alternative">
+                    <img class="img-fluid" src="{{ url_for('static', filename='images/features-app.jpg')}}" alt="alternative">
                 </div> <!-- end of col -->
                 <div class="col-lg-4">
                     <ul class="list-unstyled li-space-lg">
@@ -340,11 +340,11 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="image-container">
-                        <img class="img-fluid" src="images/customer-logo-1.png" alt="alternative">
-                        <img class="img-fluid" src="images/customer-logo-2.png" alt="alternative">
-                        <img class="img-fluid" src="images/customer-logo-3.png" alt="alternative">
-                        <img class="img-fluid" src="images/customer-logo-4.png" alt="alternative">
-                        <img class="img-fluid" src="images/customer-logo-5.png" alt="alternative">
+                        <img class="img-fluid" src="{{ url_for('static', filename='images/customer-logo-1.png')}}" alt="alternative">
+                        <img class="img-fluid" src="{{ url_for('static', filename='images/customer-logo-2.png')}}" alt="alternative">
+                        <img class="img-fluid" src="{{ url_for('static', filename='images/customer-logo-3.png')}}" alt="alternative">
+                        <img class="img-fluid" src="{{ url_for('static', filename='images/customer-logo-4.png')}}" alt="alternative">
+                        <img class="img-fluid" src="{{ url_for('static', filename='images/customer-logo-5.png')}}" alt="alternative">
                     </div> <!-- end of image-container -->
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
@@ -434,7 +434,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <p class="p-small">Copyright © 2020 <a href="https://inovatik.com">Inovatik</a> - All rights reserved</p>
+                    <p class="p-small">Copyright © 2022 <a href="https://smiledetector.herokuapp.com">SmileDetector</a> - All rights reserved</p>
                 </div> <!-- end of col -->
             </div> <!-- enf of row -->
         </div> <!-- end of container -->
