@@ -48,7 +48,7 @@ class VideoCamera(object):
         """
         #_______________________________________Performing some pre processing_______________________________________________
 
-        bgr_image = cv2.flip(input_img, 1)  # Flip the image
+        bgr_image = self.process_frame(input_img)
         rgb_image = cv2.cvtColor(bgr_image, cv2.COLOR_BGR2RGB) # Changing color from bgr to rgb
 
 
@@ -57,8 +57,8 @@ class VideoCamera(object):
         ret,rgb_jpeg = cv2.imencode('.jpg',rgb_image)
         _,bgr_jpeg = cv2.imencode('.jpg',bgr_image)
 
-        self.output_image_rgb.append(self.process_frame(rgb_jpeg))
-        self.output_image_bgr.append(self.process_frame(bgr_jpeg))
+        self.output_image_rgb.append(rgb_image.tobytes())
+        self.output_image_bgr.append(bgr_image.tobytes())
     
     def keep_processing(self):
         while True:
@@ -124,7 +124,8 @@ class VideoCamera(object):
         #end frame design 
 
         ret, jpeg = cv2.imencode('.jpg', cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
-        return jpeg.tobytes()
+        return jpeg
+        #return jpeg.tobytes()
 
 
     def show_vector_points(self):
