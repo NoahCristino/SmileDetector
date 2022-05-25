@@ -1,15 +1,85 @@
 <!DOCTYPE html>
-  <head>
-    <title>Enter video URL</title>
-  </head>
-  <body>
-    <h1>Enter video url:</h1>
-    <form action="/video" method="POST">
-      <div class="form-group">
-        <label>Video URL</label>
-        <input type="text" class="form-control" id="video_url" name="video_url">
-      </div>
-      <button type="submit" class="btn btn-primary">Watch</button>
-    </form>
-  </body>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Sync is a landing page HTML template built with Bootstrap 4 for presenting mobile apps to the online audience and for getting visitors to become users.">
+    <meta name="author" content="Inovatik">
+
+    <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
+	<meta property="og:site_name" content="" /> <!-- website name -->
+	<meta property="og:site" content="" /> <!-- website link -->
+	<meta property="og:title" content=""/> <!-- title shown in the actual shared post -->
+	<meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
+	<meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
+	<meta property="og:url" content="" /> <!-- where do you want your post to link to -->
+	<meta property="og:type" content="article" />
+
+    <!-- Webpage Title -->
+    <title>Article Details - Sync</title>
+    
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap&subset=latin-ext" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/bootstrap.css')}}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/fontawesome-all.css')}}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/swiper.css')}}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/magnific-popup.css')}}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/styles.css')}}" rel="stylesheet">
+	
+	<!-- Favicon  -->
+    <link rel="icon" href="images/favicon.png">
+</head>
+<body data-spy="scroll" data-target=".fixed-top">
+    
+    <!-- Preloader -->
+	<div class="spinner-wrapper">
+        <div class="spinner">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+        </div>
+    </div>
+    <!-- end of preloader -->
+
+
+    <!-- Privacy Content -->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    
+                    <div class="text-container">
+                        <br>
+						<h1>Analyze Engagement</h1>
+						<br>
+						<form action="/video" method="POST">
+						<div class="form-group">
+							<label for="videolink" style="padding-left:20px;">Video link:</label>
+							<input type="text" class="form-control" id="video_url" name="video_url"><br><br>
+							<input class="btn-solid-reg" type="submit" value="Analyze">
+						</div>
+						</form>
+                    </div> <!-- end of text-container-->
+                    
+                </div> <!-- end of col-->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    <!-- end of ex-basic-2 -->
+    <!-- end of privacy content -->
+
+    
+   
+        
+    <!-- Scripts -->
+    <script src="{{ url_for('static', filename='js/jquery.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/popper.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.easing.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/swiper.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.magnific-popup.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/validator.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/scripts.js')}}"></script>
+</body>
 </html>
+
