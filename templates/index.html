@@ -63,13 +63,13 @@
             <div class="collapse navbar-collapse" id="navbarsExampleDefault">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="#">DESCRIPTION <span class="sr-only">(current)</span></a>
+                        <a class="nav-link page-scroll" href="#description">DESCRIPTION <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link page-scroll" href="#features">FEATURES</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="#screens">ABOUT</a>
+                        <a class="nav-link page-scroll" href="#about">ABOUT</a>
                     </li>
 
                 </ul>
@@ -80,15 +80,15 @@
 
 
     <!-- Header -->
-    <header class="header">
+    <header id="description" class="header">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="text-container">
                         <h1>SmileDetector - UTMIST</h1>
-                        <p class="p-large p-heading">Big long description of our project long long long lorem ipsum doloret idk what comes after this</p>
-                        <a class="btn-solid-lg" href="#your-link"><i class="fab fa-apple"></i>Read Our Medium Article</a>
-                        <a class="btn-solid-lg" href="/run"><i class="fab fa-google-play"></i>Launch Demo Product</a>
+                        <p class="p-large p-heading">Smile Detector detects smiles in images using a new multi-step approach which consists of first performing facial recognition and then running the detected facial vectors though our custom C-Support Vector Classification model. By reducing the model input size and approaching this problem in a new way, we were able to produce a model that can perform classifications with high accuracy in fractions of the time that traditional models take. There are many applications for this technology including engagement analysis, marketing, and photography.</p>
+                        <a class="btn-solid-lg" target="_blank" href="https://medium.com/@cristinon66/648ebf0b6547"><i class="fab fa-medium-m"></i>Read More</a>
+                        <a class="btn-solid-lg" target="_blank" href="/run"><i class="fab fa-google-play"></i>Launch Demo</a>
                     </div> <!-- end of text-container -->
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
@@ -112,79 +112,11 @@
         <div class="deco-yellow-circle">
             <img src="{{ url_for('static', filename='images/decorative-yellow-circle.svg')}}" alt="alternative">
         </div> <!-- end of deco-yellow-circle -->
-        <div class="deco-green-diamond">
-            <img src="{{ url_for('static', filename='images/decorative-green-diamond.svg')}}" alt="alternative">
-        </div> <!-- end of deco-yellow-circle -->
     </header> <!-- end of header -->
     <!-- end of header -->
 
 
-    <!-- Small Features -->
-    <div class="cards-1">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    
-                    <!-- Card -->
-                    <div class="card">
-                        <div class="card-image">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Realtime Emotion Detection</h5>
-                        </div>
-                    </div>
-                    <!-- end of card -->
-
-                    <!-- Card -->
-                    <div class="card">
-                        <div class="card-image green">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Fastest Existing Model</h5>
-                        </div>
-                    </div>
-                    <!-- end of card -->
-
-                    <!-- Card -->
-                    <div class="card">
-                        <div class="card-image red">
-                            <i class="fas fa-cog"></i>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Lightweight</h5>
-                        </div>
-                    </div>
-                    <!-- end of card -->
-
-                    <!-- Card -->
-                    <div class="card">
-                        <div class="card-image yellow">
-                            <i class="fas fa-comments"></i>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Facial Tracking</h5>
-                        </div>
-                    </div>
-                    <!-- end of card -->
-
-                    <!-- Card -->
-                    <div class="card">
-                        <div class="card-image blue">
-                            <i class="fas fa-rocket"></i>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Something goes here</h5>
-                        </div>
-                    </div>
-                    <!-- end of card -->
-
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </div> <!-- end of cards-1 -->
-    <!-- end of small features -->
+    
 
 
     
@@ -192,80 +124,73 @@
     <!-- Features -->
     <div id="features" class="basic-2">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h2>Features</h2>
-                    <p class="p-heading">Sync's features are designed to help you improve your time management skills and become a better organized person. Organize your tasks, schedule your appointments and meet your personal development goals with Sync</p>
-                </div> <!-- end of div -->
-            </div> <!-- end of div -->
-            <div class="row">
+            <div class="row" style="justify-content: center;">
                 <div class="col-lg-4">
                     <ul class="list-unstyled li-space-lg first">
                         <li class="media">
                             <span class="fa-stack">
                                 <i class="fas fa-circle fa-stack-2x"></i>
-                                <i class="fas fa-users fa-stack-1x"></i>
+                                <i class="fas fa-smile-beam fa-stack-1x"></i>
                             </span>
                             <div class="media-body">
-                                <h4>Goal Setting</h4>
+                                <h4>Realtime Emotion Detection</h4>
                                 <p>Like any self improving process, everything starts with setting your goals and committing to them</p>
                             </div>
                         </li>
                         <li class="media">
                             <span class="fa-stack">
                                 <i class="fas fa-circle fa-stack-2x green"></i>
-                                <i class="fas fa-code fa-stack-1x"></i>
+                                <i class="fas fa-bolt fa-stack-1x"></i>
                             </span>
                             <div class="media-body">
-                                <h4>Situation Analysis</h4>
-                                <p>Sync provides a well designed and ergonomic visual editor for you to edit your quick notes</p>
+                                <h4>Fastest Existing Model</h4>
+                                <p>Our model performs detections in fractions of the time that other similar models take which gives you more resources to perform additional analysis.</p>
                             </div>
                         </li>
                         <li class="media">
                             <span class="fa-stack">
                                 <i class="fas fa-circle fa-stack-2x red"></i>
-                                <i class="fas fa-cog fa-stack-1x"></i>
+                                <i class="fas fa-feather-alt fa-stack-1x"></i>
                             </span>
                             <div class="media-body">
-                                <h4>Tasks Settings</h4>
-                                <p>Each option packaged in the app's menus is provided in order to improve you personally</p>
+                                <h4>Lightweight</h4>
+                                <p>Our model uses a new approach to smile detection which is far more lightweight than competing models. We process facial vectors extracted from the given image rather than the entire image which saves on memory and allows us to outperfom competing models.</p>
                             </div>
                         </li>
                     </ul>
                 </div> <!-- end of col -->
-                <div class="col-lg-4">
-                    <img class="img-fluid" src="{{ url_for('static', filename='images/features-app.jpg')}}" alt="alternative">
+                <div class="col-lg-1">
                 </div> <!-- end of col -->
                 <div class="col-lg-4">
-                    <ul class="list-unstyled li-space-lg">
+                    <ul class="list-unstyled li-space-lg first">
                         <li class="media">
                             <span class="fa-stack">
                                 <i class="fas fa-circle fa-stack-2x yellow"></i>
-                                <i class="fas fa-comments fa-stack-1x"></i>
+                                <i class="fas fa-robot fa-stack-1x"></i>
                             </span>
                             <div class="media-body">
-                                <h4>Social Interaction</h4>
-                                <p>Schedule your appointments, meetings and periodical evaluations using the tools</p>
+                                <h4>Facial Landmark Detection</h4>
+                                <p>Facial Detection is done based off of facial landmarks which allows us to isolate key facial features from a given image in a millisecond.</p>
                             </div>
                         </li>
                         <li class="media">
                             <span class="fa-stack">
                                 <i class="fas fa-circle fa-stack-2x blue"></i>
-                                <i class="fas fa-rocket fa-stack-1x"></i>
+                                <i class="fas fa-crosshairs fa-stack-1x"></i>
                             </span>
                             <div class="media-body">
-                                <h4>Get Things Done</h4>
-                                <p>Reading focus mode for long form articles, ebooks and other materials with long text</p>
+                                <h4>~93% Accuracy</h4>
+                                <p>Our model was trained on thousands of images and when tested on thousands of frames of test data it performed with ~93% accuracy. Please see the medium article for further explanation.</p>
                             </div>
                         </li>
                         <li class="media">
                             <span class="fa-stack">
-                                <i class="fas fa-circle fa-stack-2x"></i>
-                                <i class="fas fa-download fa-stack-1x"></i>
+                                <i class="fas fa-circle fa-stack-2x pink"></i>
+                                <i class="fas fa-server fa-stack-1x"></i>
                             </span>
                             <div class="media-body">
-                                <h4>Good Foundation</h4>
-                                <p>Get a solid foundation for your self development efforts. Try Sync mobile app for devices</p>
+                                <h4>Runs in Browser</h4>
+                                <p>No installation required! The model is fast enough to process webcam footage streamed from the browser. Everything has been ported to the web and is hosted by Heroku.</p>
                             </div>
                         </li>
                     </ul>
@@ -275,7 +200,7 @@
     </div> <!-- end of basic-2 -->
     <!-- end of features -->
     <!-- Testimonials -->
-    <div class="cards-2">
+    <div id="about" class="cards-2">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -288,12 +213,11 @@
                     <!-- Card -->
                     <div class="card">
                         <div class="card-image">
-							<img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar" style="width:200px; border-radius: 50%;">
+							<img src="{{ url_for('static', filename='images/noah.jpeg')}}" alt="Avatar" style="width:200px; border-radius: 50%;">
                             <hr class="testimonial-line">
                         </div>
                         <div class="card-body">
-                            <div class="testimonial-text">I love using Sync for my personal development needs. It meets all my requirements and it actually helps a lot with focusing skills.</div>
-                            <div class="testimonial-author">Rick Jones - Designer</div>
+                            <div class="testimonial-author">Noah Cristino - Project Director</div>
                         </div>
                     </div>
                     <!-- end of card -->
@@ -301,12 +225,11 @@
                     <!-- Card -->
                     <div class="card">
                         <div class="card-image">
-							<img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar" style="width:200px; border-radius: 50%;">
+							<img src="{{ url_for('static', filename='images/bradley.jpeg')}}" alt="Avatar" style="width:200px; border-radius: 50%;">
                             <hr class="testimonial-line">
                         </div>
                         <div class="card-body">
-                            <div class="testimonial-text">After trying out a large number of personal coaching apps I decided to give Sync a try and what a wonderful surprise it was.</div>
-                            <div class="testimonial-author">Lynda Marquez - Developer</div>
+                            <div class="testimonial-author">Bradley Mathi - Developer</div>
                         </div>
                     </div>
                     <!-- end of card -->
@@ -314,12 +237,11 @@
                     <!-- Card -->
                     <div class="card">
                         <div class="card-image">
-							<img src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar" style="width:200px; border-radius: 50%;">
+							<img src="{{ url_for('static', filename='images/robert.jpeg')}}" alt="Avatar" style="width:200px; border-radius: 50%;">
                             <hr class="testimonial-line">
                         </div>
                         <div class="card-body">
-                            <div class="testimonial-text">Never dreamed I could learn so fast how to focus on my personal goals and improve my life to levels I never thought possible.</div>
-                            <div class="testimonial-author">Jay Frisco - Marketer</div>
+                            <div class="testimonial-author">Robert Ren - Developer</div>
                         </div>
                     </div>
 					
@@ -329,15 +251,14 @@
                             <hr class="testimonial-line">
                         </div>
                         <div class="card-body">
-                            <div class="testimonial-text">Never dreamed I could learn so fast how to focus on my personal goals and improve my life to levels I never thought possible.</div>
-                            <div class="testimonial-author">Jay Frisco - Marketer</div>
+                            <div class="testimonial-author">Daniel Zhu - Developer</div>
                         </div>
                     </div>
                     <!-- end of card -->
 
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
-            <div class="row">
+            <div class="row" style="visibility: hidden;">
                 <div class="col-lg-12">
                     <div class="image-container">
                         <img class="img-fluid" src="{{ url_for('static', filename='images/customer-logo-1.png')}}" alt="alternative">
@@ -354,79 +275,7 @@
     <!-- end of testimonials -->
 
 
-    <!-- Footer -->
-    <div class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="footer-col first">
-                        <h5>About Sync</h5>
-                        <p class="p-small">Sync is a landing page HTML template built with Bootstrap 4 for presenting mobile apps</p>
-                    </div> <!-- end of footer-col -->
-                    <div class="footer-col second">
-                        <h5>Contact Info</h5>
-                        <ul class="list-unstyled li-space-lg p-small">
-                            <li class="media">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <div class="media-body">22 Innovation Street, CA, US</div>
-                            </li>
-                            <li class="media">
-                                <i class="fas fa-envelope"></i>
-                                <div class="media-body"><a href="#your-link">office@syncmobile.com</a></div>
-                            </li>
-                            <li class="media">
-                                <i class="fas fa-phone-alt"></i>
-                                <div class="media-body"><a href="#your-link">+44 376 945 23</a></div>
-                            </li>
-                        </ul>
-                    </div> <!-- end of footer-col -->
-                    <div class="footer-col third">
-                        <h5>Value Links</h5>
-                        <ul class="list-unstyled li-space-lg p-small">
-                            <li><a href="terms-conditions.html">Terms & Conditions</a></li>
-                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                            <li><a href="article-details.html">Article Details</a></li>
-                        </ul>
-                    </div> <!-- end of footer-col -->
-                    <div class="footer-col fourth">
-                        <h5>Other Apps</h5>
-                        <ul class="list-unstyled li-space-lg p-small">
-                            <li><a href="#your-link">Scientific Calculator</a></li>
-                            <li><a href="#your-link">Advanced Timer</a></li>
-                            <li><a href="#your-link">Music Store</a></li>
-                        </ul>
-                    </div> <!-- end of footer-col -->
-                    <div class="footer-col fifth">
-                        <span class="fa-stack">
-                            <a href="#your-link">
-                                <i class="fas fa-circle fa-stack-2x"></i>
-                                <i class="fab fa-facebook-f fa-stack-1x"></i>
-                            </a>
-                        </span>
-                        <span class="fa-stack">
-                            <a href="#your-link">
-                                <i class="fas fa-circle fa-stack-2x"></i>
-                                <i class="fab fa-twitter fa-stack-1x"></i>
-                            </a>
-                        </span>
-                        <span class="fa-stack">
-                            <a href="#your-link">
-                                <i class="fas fa-circle fa-stack-2x"></i>
-                                <i class="fab fa-pinterest-p fa-stack-1x"></i>
-                            </a>
-                        </span>
-                        <span class="fa-stack">
-                            <a href="#your-link">
-                                <i class="fas fa-circle fa-stack-2x"></i>
-                                <i class="fab fa-instagram fa-stack-1x"></i>
-                            </a>
-                        </span>
-                    </div> <!-- end of footer-col -->
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </div> <!-- end of footer -->  
-    <!-- end of footer -->
+    
 
 
     <!-- Copyright -->
