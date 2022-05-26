@@ -26,7 +26,7 @@ predictor = dlib.shape_predictor("t.dat")
 class VideoCamera(object):
     def __init__(self):
         self.smiling = False
-        self.history = [0,0,0,0,0,0,0,0,0,0]
+        self.history = [0,0,0]
         self.vid = cv2.VideoCapture(0)
         self.show_vector = True
         #added above
@@ -86,7 +86,7 @@ class VideoCamera(object):
         #cv2.circle(frame, (p1,p2), 1, (0, 0, 255),-1)
         for line in lines:
             cv2.line(frame, (line[0][0], line[0][1]), (line[1][0], line[1][1]), (0, 255, 0), 2)
-        return  frame
+        return frame
 
     def process_frame(self, frame):
         frame = imutils.resize(frame, width=400)
