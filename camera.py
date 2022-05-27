@@ -80,7 +80,7 @@ class VideoCamera(object):
         frame = np.full((h, w, 3), 255, np.uint8)
         font = cv2.FONT_HERSHEY_SIMPLEX
         if self.total != 0:
-            cv2.putText(frame, str(100*(self.smframes/self.total))+"%", (0,int(w/2)), font, 1, (0, 0, 255), 2, cv2.LINE_AA)
+            cv2.putText(frame, str(int(100*(self.smframes/self.total)))+"%", (0,int(w/2)), font, 1, (0, 0, 255), 2, cv2.LINE_AA)
         if self.smiling:
             cv2.circle(frame, (int(h/2), int(w/2)), 25, (0, 255, 0), -1)
         else:
