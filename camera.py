@@ -78,6 +78,8 @@ class VideoCamera(object):
 
     def gen_panel(self,h,w):
         frame = np.full((h, w, 3), 255, np.uint8)
+        font = cv2.FONT_HERSHEY_SIMPLEX
+        cv2.putText(frame, str(100*(self.smframes/self.total))+"%", (int(h/2),int((3*w)/4)), font, 3, (0, 255, 0), 2, cv2.LINE_AA)
         if self.smiling:
             cv2.circle(frame, (int(h/2), int(w/2)), 25, (0, 255, 0), -1)
         else:
