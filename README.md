@@ -17,7 +17,7 @@
   <p align="center">
     The Smile Detector project detects smiles in images and videos using a new multi-step approach which consists of first performing facial recognition and then running the detected facial vectors though our custom C-Support Vector Classification model. Machine learning accurately scans and maps facial vectors to your face to measure and track your facial structure and movements. By reducing the model input size and approaching this problem in a new way we were able to produce a model that can perform classifications with high accuracy in fractions of the time that traditional models take. The project not only detects if a user is smiling, but also includes a video parsing feature that takes in a video input and returns only the sections where somebody is smiling.
       
-   You can find our Medium post <a href="annotatable"> here</a>.
+   You can find our Medium post <a href="https://utorontomist.medium.com/smiledetector-a-new-approach-to-live-smile-detection-8b4b8bf26b3d"> here</a>.
   </p>
 </div>
 
